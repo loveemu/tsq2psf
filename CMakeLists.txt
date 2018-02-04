@@ -31,10 +31,10 @@ endif()
 #============================================================================
 
 set(SRCS
-    tsq2psf.cpp
-    PSFFile.cpp
-    ZlibReader.cpp
-    ZlibWriter.cpp
+    src/tsq2psf.cpp
+    src/PSFFile.cpp
+    src/ZlibReader.cpp
+    src/ZlibWriter.cpp
 )
 
 add_executable(tsq2psf ${SRCS})

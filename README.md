@@ -1,5 +1,6 @@
 Choro Q Wonderful! TSQ/TVB to PSF Converter
 ===========================================
+[![Travis Build Status](https://travis-ci.org/loveemu/tsq2psf.svg?branch=master)](https://travis-ci.org/loveemu/tsq2psf) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/05atcr76nr2aa62c/branch/master?svg=true)](https://ci.appveyor.com/project/loveemu/tsq2psf/branch/master)
 
 TSQ2PSF converts TSQ/TVB sound files into PSF file.
 
