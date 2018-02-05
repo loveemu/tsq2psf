@@ -213,7 +213,7 @@ bool build_choroq_psf(const char * psf_path, const uint8_t * tsq, size_t tsq_siz
 		return false;
 	}
 
-	char * region_name;
+	const char * region_name;
 	if (strcmp((const char *)&psx_exe_header[0x4c], "Sony Computer Entertainment Inc. for Japan area") == 0) {
 		region_name = "Japan";
 	}
