@@ -6,6 +6,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(VERSION "1.0.0")
 
+if(MSVC)
+    if(CMAKE_CL_64)
+      set(MSVC_ARCHITECTURE_NAME x64)
+    else()
+      set(MSVC_ARCHITECTURE_NAME win32)
+    endif()
+
+    # Use bundled dependencies
+    set(ZLIB_ROOT ${CMAKE_SOURCE_DIR}/dependencies/zlib)
+    set(ZLIB_LIBRARY ${CMAKE_SOURCE_DIR}/dependencies/zlib/lib/${MSVC_ARCHITECTURE_NAME}/zlibstat.lib)
+    add_definitions(-DZLIB_WINAPI)
+endif()
+
 find_package(ZLIB REQUIRED)
 
 if(MSVC)
@@ -37,7 +50,15 @@ set(SRCS
     src/ZlibWriter.cpp
 )
 
-add_executable(tsq2psf ${SRCS})
+set(HDRS
+    src/tsq2psf.h
+    src/PSFFile.h
+    src/ZlibReader.h
+    src/ZlibWriter.h
+    src/cpath.h
+)
+
+add_executable(tsq2psf ${SRCS} ${HDRS})
 
 if(ZLIB_FOUND)
     include_directories(${ZLIB_INCLUDE_DIRS})
