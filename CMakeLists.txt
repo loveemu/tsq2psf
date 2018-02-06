@@ -22,7 +22,7 @@ endif()
 find_package(ZLIB REQUIRED)
 
 if(MSVC)
-    option(STATIC_CRT "Use static CRT libraries" OFF)
+    option(STATIC_CRT "Use static CRT libraries" ON)
 
     # Rewrite command line flags to use /MT if necessary
     if(STATIC_CRT)
