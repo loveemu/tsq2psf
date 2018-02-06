@@ -34,8 +34,8 @@ after_build:
   - ps: $env:my_version = "$env:gitrev"
   - set package_name=tsq2psf-%my_version%-%arch%
   - copy build\%config%\tsq2psf.exe .
-  - 7z a -mx9 %package_name%.7z tsq2psf.exe tsq2psf.psflib README.md LICENSE.txt
+  - 7z a %package_name%.zip tsq2psf.exe tsq2psf.psflib README.md LICENSE.txt
 
 artifacts:
-  - path: $(package_name).7z
+  - path: $(package_name).zip
     name: $(arch)
