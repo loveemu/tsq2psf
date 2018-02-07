@@ -52,7 +52,15 @@ set(SRCS
     src/ZlibWriter.cpp
 )
 
-add_executable(tsq2psf ${SRCS})
+set(HDRS
+    src/cpath.h
+    src/PSFFile.h
+    src/tsq2psf.h
+    src/ZlibReader.h
+    src/ZlibWriter.h
+)
+
+add_executable(tsq2psf ${SRCS} ${HDRS})
 
 if(ZLIB_FOUND)
     include_directories(${ZLIB_INCLUDE_DIRS})
